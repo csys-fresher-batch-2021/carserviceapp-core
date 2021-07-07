@@ -1,0 +1,11 @@
+CREATE TABLE listall_booked_service(
+  Services varchar(25),
+  estimated_price varchar(20),
+  discounts varchar(100) NOT NULL,
+  estimated_time varchar(10)
+  
+) ;
+
+INSERT INTO  listall_booked_service  VALUES ('general','1000','10%','2day');
+commit;
+select * from  listall_booked_service;

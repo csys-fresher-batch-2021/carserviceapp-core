@@ -1,0 +1,14 @@
+CREATE TABLE service_estimation(
+  Services varchar(25),
+  Actual_price varchar(25),
+  estimated_price varchar(20),
+  discounts varchar(100) NOT NULL,
+  Actual_time_duration varchar(100),
+  estimated_time varchar(10)
+  
+) ;
+
+INSERT INTO  service_estimation  VALUES ('waterwash','500','400','5%','1day','half a day');
+INSERT INTO  service_estimation  VALUES ('general','1000','800','10%','2day','1 day');
+commit;
+select * from  service_estimation ;
