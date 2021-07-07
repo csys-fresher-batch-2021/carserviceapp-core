@@ -25,3 +25,40 @@ INSERT INTO login VALUES ('789','muthu','mun1');
 INSERT INTO login VALUES ('321','parthu','par1');
 commit;
 select * from login;
+CREATE TABLE rating_car_service(
+  Services varchar(25),
+  customer_name varchar(20),
+  incharge_name varchar(100) NOT NULL,
+   rating varchar(10),
+   review varchar(20)
+  
+) ;
+
+INSERT INTO  rating_car_service VALUES ('general','ftwyu','hdas','8','good');
+INSERT INTO  rating_car_service VALUES ('water_wash','utr','jeyu9','8','good');
+commit;
+
+CREATE TABLE service_estimation(
+  Services varchar(25),
+  Actual_price varchar(25),
+  estimated_price varchar(20),
+  discounts varchar(100) NOT NULL,
+  Actual_time_duration varchar(100),
+  estimated_time varchar(10)
+  
+) ;
+
+INSERT INTO  service_estimation  VALUES ('waterwash','500','400','5%','1day','half a day');
+INSERT INTO  service_estimation  VALUES ('general','1000','800','10%','2day','1 day');
+commit;
+select * from  service_estimation ;
+CREATE TABLE update_car_service_status(
+  Services varchar(25),
+  Initiated varchar(20),
+  In_progress varchar(100) NOT NULL,
+   completed varchar(10)
+  
+) ;
+
+INSERT INTO  update_car_service_status VALUES ('general','null','yes','null');
+commit;
