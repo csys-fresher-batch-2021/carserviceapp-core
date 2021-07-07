@@ -11,4 +11,3 @@ INSERT INTO login VALUES ('456','nandhu','nan1');
 INSERT INTO login VALUES ('789','muthu','mun1');
 INSERT INTO login VALUES ('321','parthu','par1');
 commit;
-select * from login;
