@@ -62,3 +62,33 @@ CREATE TABLE update_car_service_status(
 
 INSERT INTO  update_car_service_status VALUES ('general','null','yes','null');
 commit;
+
+CREATE TABLE add_service (
+  Services varchar(25),
+  price varchar(25),
+  discounts varchar(100) NOT NULL,
+  time_duration varchar(100),
+  incharge_name varchar(50),
+  incharge_phn varchar(15)
+) ;
+
+INSERT INTO  add_service  VALUES ('waterwash','500','5%','half a day','muthu','9849865285');
+INSERT INTO  add_service  VALUES ('general','1000','0%','1day','parthi','97259732634');
+commit;
+
+
+CREATE TABLE list_all_service (
+  Services varchar(25),
+  price varchar(25),
+  discounts varchar(100) NOT NULL,
+  time_duration varchar(100),
+  incharge_name varchar(50),
+  incharge_phn varchar(15)
+) ;
+
+INSERT INTO list_all_service  VALUES ('waterwash','750','10%','half a day','deepa','8798435245');
+INSERT INTO list_all_service  VALUES ('general','1000','20%','1day','nandhu','9874537436');
+INSERT INTO list_all_service  VALUES ('wheel allignment','500','5%','half a day','muthu','9849865285');
+INSERT INTO list_all_service  VALUES ('bumper fixing','1000','0%','1day','parthi','97259732634');
+commit;
+select * from list_all_service ;
