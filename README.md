@@ -92,3 +92,31 @@ INSERT INTO list_all_service  VALUES ('wheel allignment','500','5%','half a day'
 INSERT INTO list_all_service  VALUES ('bumper fixing','1000','0%','1day','parthi','97259732634');
 commit;
 select * from list_all_service ;
+
+CREATE TABLE delete_service (
+  Services varchar(25),
+  price varchar(25),
+  discounts varchar(100) NOT NULL,
+  time_duration varchar(100),
+  incharge_name varchar(50),
+  incharge_phn varchar(15)
+) ;
+
+
+INSERT INTO  delete_service  VALUES ('wheel allignment','500','5%','half a day','muthu','9849865285');
+INSERT INTO  delete_service  VALUES ('bumper fixing','1000','0%','1day','parthi','97259732634');
+commit;
+select * from  delete_service ;
+
+CREATE TABLE bookcar_service(
+  Services varchar(25),
+  estimated_price varchar(20),
+  discounts varchar(100) NOT NULL,
+  estimated_time varchar(10)
+  
+) ;
+
+INSERT INTO bookcar_service VALUES ('waterwash','500','5%','1day');
+INSERT INTO  bookcar_service  VALUES ('general','1000','10%','2day');
+commit;
+
