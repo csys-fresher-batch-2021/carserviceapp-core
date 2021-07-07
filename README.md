@@ -1,3 +1,5 @@
+REGISTERATION
+
 CREATE TABLE registeration (
   FirstName varchar(25),
   LastName varchar(25),
@@ -13,6 +15,8 @@ INSERT INTO registeration VALUES ('muthu','kumar','muthu@gmail.com','gyu');
 INSERT INTO registeration VALUES ('parthu','ravi','parthu@gmail.com','huie');
 commit;
 
+LOGIN
+
 CREATE TABLE login(
     login_id VARCHAR(20) PRIMARY KEY ,
     username VARCHAR(50) NOT NULL UNIQUE,
@@ -24,7 +28,9 @@ INSERT INTO login VALUES ('456','nandhu','nan1');
 INSERT INTO login VALUES ('789','muthu','mun1');
 INSERT INTO login VALUES ('321','parthu','par1');
 commit;
-select * from login;
+
+RATING CAR SERVICE
+
 CREATE TABLE rating_car_service(
   Services varchar(25),
   customer_name varchar(20),
@@ -37,6 +43,8 @@ CREATE TABLE rating_car_service(
 INSERT INTO  rating_car_service VALUES ('general','ftwyu','hdas','8','good');
 INSERT INTO  rating_car_service VALUES ('water_wash','utr','jeyu9','8','good');
 commit;
+
+SERVICE ESTIMATION
 
 CREATE TABLE service_estimation(
   Services varchar(25),
@@ -51,7 +59,9 @@ CREATE TABLE service_estimation(
 INSERT INTO  service_estimation  VALUES ('waterwash','500','400','5%','1day','half a day');
 INSERT INTO  service_estimation  VALUES ('general','1000','800','10%','2day','1 day');
 commit;
-select * from  service_estimation ;
+
+UPDATE CAR SERVICE
+
 CREATE TABLE update_car_service_status(
   Services varchar(25),
   Initiated varchar(20),
@@ -62,6 +72,8 @@ CREATE TABLE update_car_service_status(
 
 INSERT INTO  update_car_service_status VALUES ('general','null','yes','null');
 commit;
+
+ADD SERVICE
 
 CREATE TABLE add_service (
   Services varchar(25),
@@ -76,6 +88,7 @@ INSERT INTO  add_service  VALUES ('waterwash','500','5%','half a day','muthu','9
 INSERT INTO  add_service  VALUES ('general','1000','0%','1day','parthi','97259732634');
 commit;
 
+LIST ALL SERVICE
 
 CREATE TABLE list_all_service (
   Services varchar(25),
@@ -91,7 +104,8 @@ INSERT INTO list_all_service  VALUES ('general','1000','20%','1day','nandhu','98
 INSERT INTO list_all_service  VALUES ('wheel allignment','500','5%','half a day','muthu','9849865285');
 INSERT INTO list_all_service  VALUES ('bumper fixing','1000','0%','1day','parthi','97259732634');
 commit;
-select * from list_all_service ;
+
+DELETE SERVICE
 
 CREATE TABLE delete_service (
   Services varchar(25),
@@ -106,7 +120,8 @@ CREATE TABLE delete_service (
 INSERT INTO  delete_service  VALUES ('wheel allignment','500','5%','half a day','muthu','9849865285');
 INSERT INTO  delete_service  VALUES ('bumper fixing','1000','0%','1day','parthi','97259732634');
 commit;
-select * from  delete_service ;
+
+BOOKCAR SERVICE
 
 CREATE TABLE bookcar_service(
   Services varchar(25),
@@ -120,3 +135,15 @@ INSERT INTO bookcar_service VALUES ('waterwash','500','5%','1day');
 INSERT INTO  bookcar_service  VALUES ('general','1000','10%','2day');
 commit;
 
+LIST ALL BOOK SERVICE
+
+CREATE TABLE listall_booked_service(
+  Services varchar(25),
+  estimated_price varchar(20),
+  discounts varchar(100) NOT NULL,
+  estimated_time varchar(10)
+  
+) ;
+
+INSERT INTO  listall_booked_service  VALUES ('general','1000','10%','2day');
+commit;
