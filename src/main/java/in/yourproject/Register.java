@@ -1,4 +1,4 @@
-package in.carservice.model;
+package in.yourproject;
 
 public class Register {
 	
