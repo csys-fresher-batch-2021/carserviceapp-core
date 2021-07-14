@@ -1,4 +1,4 @@
-package in.carservice.model;
+package in.yourproject.model;
 
 public class LoginValidator {
 

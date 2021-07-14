@@ -1,4 +1,4 @@
-package in.yourproject;
+import in.carservice.model.Register;
 
 public class RegisterTest {
 	public static void main(String[] args) {

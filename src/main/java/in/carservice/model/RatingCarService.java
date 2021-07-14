@@ -1,4 +1,4 @@
-package in.yourproject;
+package in.carservice.model;
 
 public class RatingCarService {
 	 public String Services;

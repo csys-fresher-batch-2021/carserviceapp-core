@@ -1,4 +1,4 @@
-package in.yourproject;
+package in.carservice.model;
 
 public class AddServiceTest {
 

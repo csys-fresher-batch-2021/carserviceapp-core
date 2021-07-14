@@ -1,4 +1,4 @@
-package in.yourproject;
+import in.carservice.model.Login;
 
 public class loginTest {
 	

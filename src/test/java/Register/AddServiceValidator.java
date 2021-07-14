@@ -1,4 +1,4 @@
-package in.carservice.model;
+package Register;
 
  class AddServiceValidator2 {
 	
@@ -19,7 +19,7 @@ package in.carservice.model;
 
 		public static void main(String[] args) {
 
-			String services="Wheel";
+			String services="WheelAllignment";
 			int Price= 500;
 
 			try {
