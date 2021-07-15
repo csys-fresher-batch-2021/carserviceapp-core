@@ -1,5 +1,5 @@
 package in.yourproject;
 
-public class AppTest {
+public class AddService {
 
 }
