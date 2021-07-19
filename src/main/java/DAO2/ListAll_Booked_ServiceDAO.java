@@ -1,4 +1,4 @@
-package in.carservice.model.dao;
+package DAO2;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
