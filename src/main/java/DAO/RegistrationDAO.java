@@ -1,13 +1,13 @@
 package DAO;
 
-
-	
 	
 	 
 	import java.sql.Connection;
 	import java.sql.DriverManager;
 	import java.sql.PreparedStatement;
 	import java.sql.SQLException;
+
+import Newvalidate.NameValidate;
 	
 		public class RegistrationDAO {
 
@@ -28,16 +28,21 @@ package DAO;
 					Connection connection = DriverManager.getConnection(url, username,password);
 					//connection.setAutoCommit(false);//default true 
 					
-					System.out.println(connection);
 					
 					//String name = ;
 					  
-					String FirstName ="muthu"; 
+					String FirstName ="  muthu "; 
 					String  LastName= "parthi"; 
 					String email = "abcd@gmail.com";
 					String  pswd = "good"; 
+					boolean checkName = NameValidate.checkName( FirstName);
+					boolean checkName1 = NameValidate.checkName( LastName);
+					boolean checkName2 = NameValidate.checkName( email);
+					boolean checkName3 = NameValidate.checkName( pswd);
 					
 					
+					if(checkName && checkName1 && checkName2 && checkName3   ) { 
+			 
 					//String sql = "insert into test_students(name) values ('" + name + "')";
 					String sql = "insert into  registeration (FirstName,LastName,email  , pswd)"
 							+ "values (?,?,?,?)";
@@ -51,6 +56,8 @@ package DAO;
 					pst.setString(3,  email);
 					pst.setString(4, pswd);
 					int rows = pst.executeUpdate();
+				 
+					
 					
 					//connection.commit();
 					
@@ -66,7 +73,7 @@ package DAO;
 
 				}
 
-			
+		}
 
 			
 
