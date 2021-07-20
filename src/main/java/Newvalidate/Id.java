@@ -10,7 +10,7 @@ public class Id {
 
 	public static boolean checkId(int id) {
 
-		if (id >= 100) {
+		if (id > 0) {
 			return true;
 		} else {
 			return false;
@@ -20,7 +20,7 @@ public class Id {
 
 	public static boolean checkPrice(int price) {
 
-		if (price >= 0) {
+		if (price > 0) {
 			return true;
 		} else {
 			return false;
