@@ -1,67 +1,50 @@
-package com.jga.Dao;
+package DAO;
 
     import java.sql.Connection;
 	import java.sql.DriverManager;
 	import java.sql.PreparedStatement;
 	import java.sql.SQLException;
+
+import Newvalidate.ConnectionUtilTest;
+import Newvalidate.DBException;
+import Newvalidate.NameValidate;
 	public class BookDAO {
 
-		public static void main(String[] args)throws SQLException, ClassNotFoundException {
-			// TODO Auto-generated method stub
-			
-			
-					String driverClassName = "oracle.jdbc.driver.OracleDriver";		
-					String url = "jdbc:oracle:thin:@192.168.0.20:1521:DBEBS12";		
-					String username = "apps";		
-					String password = "apps";
-					
-					//Step 1: Load the driver
-					Class.forName(driverClassName);
-					
-					//Step 2: Connection
-					
-					Connection connection = DriverManager.getConnection(url, username,password);
-					//connection.setAutoCommit(false);//default true 
-					
-					System.out.println(connection);
-					
-					//String name = ;
-					 
-					String Services = "WaterServices"; 
-					int estimated_price = 2000; 
-					int discounts=10;
-					String estimated_time = "1 Day"; 
-					
-					
-					//String sql = "insert into test_students(name) values ('" + name + "')";
-					String sql = "insert into bookcar_service (Services,estimated_price,discounts,estimated_time)values (?,?,?,?)";
-					//String sql = "delete from test_students where name = ?";
-					System.out.println(sql);
-					
-					
-					PreparedStatement pst = connection.prepareStatement(sql);
-					pst.setString(1, Services);
-					pst.setInt(2, estimated_price);
-					pst.setInt(3, discounts);
+		public static void main(String[] args) throws SQLException, ClassNotFoundException {
+
+			Connection connection = null;
+			PreparedStatement pst = null;
+			try {
+				connection = ConnectionUtilTest.getConnection();
+				String  service = "muthu";
+				String estimated_price  = "parthi";
+				String discounts  = "abcd@gmail.com";
+				String  estimated_time = "good";
+				 boolean checkName = NameValidate.checkName(service);
+				 boolean checkName2 = NameValidate.checkName(estimated_price);
+				 boolean checkName3 = NameValidate.checkName(discounts);
+				 boolean checkName4 = NameValidate.checkName(estimated_time);
+				 
+
+				if (checkName && checkName2 && checkName3 && checkName4) {
+					String sql = "insert into  bookcar_service (services,estimated_price,discounts  , estimated_time)" + "values (?,?,?,?)";
+
+					pst = connection.prepareStatement(sql);
+					pst.setString(1, service);
+					pst.setString(2, estimated_price);
+					pst.setString(3, discounts);
 					pst.setString(4, estimated_time);
 					int rows = pst.executeUpdate();
-					
-					//connection.commit();
-					
-					//connection.rollback();
-					
-					pst.close();
-					
-					connection.close();
-					
-					
+
 					System.out.println("No of rows inserted :" + rows);
-					
 
+				} else {
+					System.out.println("Invalid Data");
 				}
-
-			
-
-			
-
+			} catch (DBException e) {
+				e.printStackTrace();
+			} finally {
+				ConnectionUtilTest.close(pst, connection);
+			}
+		}
 	}
